@@ -6,14 +6,14 @@ public class Driver {
 	
 	private int driverId ;
 	private String driverRef ;
-	private int number ;
+	private Integer number ;
 	private String code ;
 	private String forename ;
 	private String surname ;
 	private LocalDate dob ; // date of birth
 	private String nationality ;
 	private String url ;
-	public Driver(int driverId, String driverRef, int number, String code, String forename, String surname,
+	public Driver(int driverId, String driverRef, Integer number, String code, String forename, String surname,
 			LocalDate dob, String nationality, String url) {
 		super();
 		this.driverId = driverId;
@@ -38,10 +38,10 @@ public class Driver {
 	public void setDriverRef(String driverRef) {
 		this.driverRef = driverRef;
 	}
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 	public String getCode() {
@@ -81,7 +81,26 @@ public class Driver {
 		this.url = url;
 	}
 	
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + driverId;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Driver other = (Driver) obj;
+		if (driverId != other.driverId)
+			return false;
+		return true;
+	}
 	
 
 }

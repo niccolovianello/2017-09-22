@@ -6,7 +6,6 @@ public class Season {
 	private String url ;
 	
 	public Season(int year, String url) {
-		super();
 		this.year = year;
 		this.url = url;
 	}
